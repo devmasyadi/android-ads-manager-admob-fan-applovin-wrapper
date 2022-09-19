@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Admob-Fan-Applovin-Wrapper"
 include ':app'
-include ':adsmanager-wrapper'
+include ':adsmanagerwrapper'
