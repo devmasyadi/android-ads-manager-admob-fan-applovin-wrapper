@@ -1,37 +1,50 @@
 package com.adsmanager.adswrapper
 
 import com.adsmanager.ads.NetworkAds
-import com.adsmanager.ads.NetworkOpenAd
 
 object ConfigAds {
+
     var isShowAds = false
+    var isShowOpenAd = false
+    var isShowBanner = false
+    var isShowInterstitial = false
+    var isShowNativeAd = false
+    var isShowRewards = false
+
     var intervalTimeInterstitial = 10 // seconds
 
-    var primaryNetworkOpenAd = NetworkOpenAd.ADMOB
-    var secondaryNetworkOpenAd: NetworkOpenAd? = null
-    var tertiaryAdsNetworkOpenAd: NetworkOpenAd? = null
-
-    var primaryOpenAdId = "123"
-    var secondaryOpenAdId: String? = null
-    var tertiaryOpenAdId: String? = null
+    var primaryOpenAdId = ""
+    var secondaryOpenAdId = ""
+    var tertiaryOpenAdId = ""
+    var quaternaryOpenAdId = ""
 
     var primaryAds: NetworkAds = NetworkAds.ADMOB
     var secondaryAds: NetworkAds? = null
     var tertiaryAds: NetworkAds? = null
+    var quaternaryAds: NetworkAds? = null
 
-    var primaryBannerId: String = "12323"
-    var secondaryBannerId: String? = null
-    var tertiaryBannerId: String? = null
+    var primaryAppId = ""
+    var secondaryAppId = ""
+    var tertiaryAppId = ""
+    var quaternaryAppId = ""
 
-    var primaryInterstitialId: String = "12323"
-    var secondaryInterstitialId: String? = null
-    var tertiaryInterstitialId: String? = null
+    var primaryBannerId = ""
+    var secondaryBannerId = ""
+    var tertiaryBannerId = ""
+    var quaternaryBannerId = ""
 
-    var primaryNativeId: String = "12323"
-    var secondaryNativeId: String? = null
-    var tertiaryNativeId: String? = null
+    var primaryInterstitialId = ""
+    var secondaryInterstitialId = ""
+    var tertiaryInterstitialId = ""
+    var quaternaryInterstitialId = ""
 
-    var primaryRewardsId: String = "12323"
-    var secondaryRewardsId: String? = null
-    var tertiaryRewardsId: String? = null
+    var primaryNativeId = ""
+    var secondaryNativeId = ""
+    var tertiaryNativeId = ""
+    var quaternaryNativeId = ""
+
+    var primaryRewardsId = ""
+    var secondaryRewardsId = ""
+    var tertiaryRewardsId = ""
+    var quaternaryRewardsId = ""
 }

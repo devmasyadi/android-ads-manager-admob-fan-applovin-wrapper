@@ -19,41 +19,51 @@ class AdsManagerOpenAdWrapper(
     fun getCurrentActivity() = currentActivity
 
     fun isShowingAd(): Boolean {
-        return adsManagerOpenAd.isShowingAd(ConfigAds.primaryNetworkOpenAd)
+        return adsManagerOpenAd.isShowingAd()
     }
 
     fun loadAd(
         activity: Activity,
         callbackAds: CallbackAds?
     ) {
-        if (ConfigAds.isShowAds)
+        if (ConfigAds.isShowAds && ConfigAds.isShowOpenAd)
             adsManagerOpenAd.loadAd(
                 activity,
-                ConfigAds.primaryNetworkOpenAd,
+                ConfigAds.primaryAds,
                 ConfigAds.primaryOpenAdId,
-                ConfigAds.secondaryNetworkOpenAd,
+                ConfigAds.secondaryAds,
                 ConfigAds.secondaryOpenAdId,
-                ConfigAds.tertiaryAdsNetworkOpenAd,
+                ConfigAds.tertiaryAds,
                 ConfigAds.tertiaryOpenAdId,
+                ConfigAds.quaternaryAds,
+                ConfigAds.quaternaryOpenAdId,
                 callbackAds
             )
+        else {
+            callbackAds?.onAdFailedToLoad("ads off")
+        }
     }
 
     fun showAdIfAvailable(
         activity: Activity,
         callbackOpenAd: CallbackOpenAd?
     ) {
-        if (ConfigAds.isShowAds)
+        if (ConfigAds.isShowAds && ConfigAds.isShowOpenAd)
             adsManagerOpenAd.showAdIfAvailable(
                 activity,
-                ConfigAds.primaryNetworkOpenAd,
+                ConfigAds.primaryAds,
                 ConfigAds.primaryOpenAdId,
-                ConfigAds.secondaryNetworkOpenAd,
+                ConfigAds.secondaryAds,
                 ConfigAds.secondaryOpenAdId,
-                ConfigAds.tertiaryAdsNetworkOpenAd,
+                ConfigAds.tertiaryAds,
                 ConfigAds.tertiaryOpenAdId,
+                ConfigAds.quaternaryAds,
+                ConfigAds.quaternaryOpenAdId,
                 callbackOpenAd
             )
+        else {
+            callbackOpenAd?.onAdFailedToLoad("ads off")
+        }
     }
 
 }
