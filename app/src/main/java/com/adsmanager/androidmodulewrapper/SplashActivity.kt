@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.adsmanager.ads.NetworkAds
 import com.adsmanager.adswrapper.AdsManagerOpenAdWrapper
 import com.adsmanager.adswrapper.AdsManagerWrapper
 import com.adsmanager.adswrapper.ConfigAds
 import com.adsmanager.adswrapper.Utils
 import com.adsmanager.core.CallbackAds
 import com.adsmanager.core.CallbackOpenAd
+import com.adsmanager.core.NetworkAds
 import com.adsmanager.core.iadsmanager.IInitialize
 import org.koin.android.ext.android.inject
 import java.util.*
