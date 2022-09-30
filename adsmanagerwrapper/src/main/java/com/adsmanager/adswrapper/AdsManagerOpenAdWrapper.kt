@@ -4,6 +4,7 @@ import android.app.Activity
 import com.adsmanager.ads.AdsManagerOpenAd
 import com.adsmanager.core.CallbackAds
 import com.adsmanager.core.CallbackOpenAd
+import com.adsmanager.core.ConfigAds
 
 class AdsManagerOpenAdWrapper(
     private val adsManagerOpenAd: AdsManagerOpenAd
