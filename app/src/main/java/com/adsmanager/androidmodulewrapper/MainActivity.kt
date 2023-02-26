@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        adsManager.loadGdpr(this@MainActivity, true)
+//        adsManager.loadGdpr(this@MainActivity, false)
         adsManager.loadInterstitial(this@MainActivity)
         adsManager.loadRewards(this@MainActivity)
 

@@ -40,7 +40,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     implementation 'com.github.devmasyadi:android-ads-manager-core:1.0.8'
-    implementation 'com.github.devmasyadi:android-ads-manager-admob-fan-applovin:1.0.3'
+    implementation 'com.github.devmasyadi:android-ads-manager-admob-fan-applovin:+'
 
     //koin
     implementation "io.insert-koin:koin-core:2.2.3"

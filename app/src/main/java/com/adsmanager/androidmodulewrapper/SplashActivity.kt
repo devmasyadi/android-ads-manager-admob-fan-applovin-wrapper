@@ -29,14 +29,17 @@ class SplashActivity : AppCompatActivity() {
     private val adsManager: AdsManagerWrapper by inject()
     private val adsManagerOpenAd: AdsManagerOpenAdWrapper by inject()
     private var secondsRemaining: Long = 0L
+    private var isShowOpenAd = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        ConfigAds.primaryOpenAdId = "ca-app-pub-3940256099942544/3419835294"
+        ConfigAds.primaryOpenAdId = "ca-app-pub-3940256099942544/3419835294XX"
+        ConfigAds.secondaryOpenAdId = "ca-app-pub-3940256099942544/3419835294"
+        ConfigAds.tertiaryOpenAdId = "fcd4981c18e62771"
         ConfigAds.primaryAds = NetworkAds.ADMOB
-        ConfigAds.secondaryAds = NetworkAds.FAN
+        ConfigAds.secondaryAds = NetworkAds.APPLOVIN_MAX
         ConfigAds.tertiaryAds = NetworkAds.APPLOVIN_MAX
 
         ConfigAds.primaryBannerId = "ca-app-pub-3940256099942544/6300978111XXX"
@@ -55,6 +58,7 @@ class SplashActivity : AppCompatActivity() {
         ConfigAds.secondaryRewardsId = "1363711600744576_1508879032894498"
         ConfigAds.tertiaryRewardsId = "c11378688d2adfd1"
         ConfigAds.isShowAds = true
+        ConfigAds.isShowOpenAd = true
 
         if (!ConfigAds.isShowAds) {
             startMainActivity()
@@ -67,9 +71,13 @@ class SplashActivity : AppCompatActivity() {
                 override fun onInitializationComplete() {}
             },
         )
+        adsManager.loadGdpr(
+            this,
+            false,
+        )
         adsManager.setTestDevices(
             this,
-            listOf("7822dbbe-788d-4083-afd2-37e9b9a74301"),
+            listOf("D19A938905670AE06FE95467D563C425"),
         )
         adsManagerOpenAd.loadAd(
             this,
@@ -77,11 +85,15 @@ class SplashActivity : AppCompatActivity() {
                 CallbackAds() {
                 override fun onAdFailedToLoad(error: String?) {
                     startMainActivity()
+                    Log.e("HALLO", "adsManagerOpenAd loadAd: $error")
                 }
 
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    createTimer(COUNTER_TIME)
+                    if(!isShowOpenAd) {
+                        isShowOpenAd = true
+                        createTimer(COUNTER_TIME)
+                    }
                 }
             })
     }
