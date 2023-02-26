@@ -39,8 +39,10 @@ class SplashActivity : AppCompatActivity() {
         ConfigAds.secondaryOpenAdId = "ca-app-pub-3940256099942544/3419835294"
         ConfigAds.tertiaryOpenAdId = "fcd4981c18e62771"
         ConfigAds.primaryAds = NetworkAds.ADMOB
-        ConfigAds.secondaryAds = NetworkAds.APPLOVIN_MAX
+        ConfigAds.secondaryAds = NetworkAds.FAN
         ConfigAds.tertiaryAds = NetworkAds.APPLOVIN_MAX
+
+        ConfigAds.isShowBanner = true
 
         ConfigAds.primaryBannerId = "ca-app-pub-3940256099942544/6300978111XXX"
         ConfigAds.secondaryBannerId = "1363711600744576_1363713000744436"
@@ -77,7 +79,7 @@ class SplashActivity : AppCompatActivity() {
         )
         adsManager.setTestDevices(
             this,
-            listOf("D19A938905670AE06FE95467D563C425"),
+            listOf("a325109e-23fd-4c57-aa10-0a2a79b871c5"),
         )
         adsManagerOpenAd.loadAd(
             this,
